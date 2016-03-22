@@ -1,0 +1,120 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[table]{xcolor} % For RWTH colors
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage[top=1.75cm,left=1.25cm,right=1.25cm,bottom=1.75cm]{geometry}
+
+% Remove "References" header from BibTex
+% see http://tex.stackexchange.com/questions/132646/how-to-remove-the-references-title
+\usepackage{etoolbox}
+\patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Colors
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor{RWTHblue}{RGB}{0,83,159}
+\definecolor{RWTHblack}{RGB}{0,0,0}
+\definecolor{RWTHwhite}{RGB}{255,255,255}
+\definecolor{RWTHlightblue}{RGB}{142,186,226}
+\definecolor{RWTHgrey}{RGB}{51,51,51}
+\definecolor{RWTHlightgrey}{RGB}{204,204,204}
+\definecolor{RWTHsuperlightgrey}{RGB}{247,247,247}
+\definecolor{RWTHpetrol}{RGB}{0,97,101}
+\definecolor{RWTHteal}{RGB}{0,152,161}
+\definecolor{RWTHmaygreen}{RGB}{189,205,0}
+\definecolor{RWTHgreen}{RGB}{87,171,39}
+\definecolor{RWTHyellow}{RGB}{255,237,0}
+\definecolor{RWTHorange}{RGB}{246,168,0}
+\definecolor{RWTHmagenta}{RGB}{227,0,102}
+\definecolor{RWTHred}{RGB}{204,7,30}
+\definecolor{RWTHbordeaux}{RGB}{161,16,53}
+\definecolor{RWTHviolet}{RGB}{97,33,88}
+\definecolor{RWTHpurple}{RGB}{122,111,172}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Font
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \fontfamily{phv}\selectfont
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Misc
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% http://tex.stackexchange.com/questions/54333/no-page-numbering
+\pagenumbering{gobble}
+
+\def\arraystretch{1.25}
+
+\begin{document}
+    
+    \vskip -12px
+    \begin{center}
+        {\Huge References}\\
+    \end{center}
+    \vskip 6px
+    
+    \begin{multicols}{2}
+        \noindent\fbox{
+            \parbox{0.47\textwidth}{
+                \vskip 1px
+                Additional resources available at \url{http://davidstutz.de/projects/superpixelsseeds/}.
+            }
+        }
+        \vskip 1px
+        
+       \noindent\begin{tabular}{|l l|}
+            \hline
+            \multicolumn{2}{|l|}{\textbf{Superpixel algorithms}}\\\hline\hline
+            \textbf{NC} & Ren and Malik \cite{RenMalik:2003}\\
+            \textbf{FH} & Felzenswalb and Huttenlocher \cite{FelzenswalbHuttenlocher:2004}\hphantom{aa} \\
+            \textbf{QS} & Vedaldi and Soatto \cite{VedaldiSoatto:2008} \\
+            \textbf{TP} & Levinshtein et al. \cite{LevinshteinStereKutulakosFleetDickinsonSiddiqi:2009} \\
+            \textbf{SLIC} & Achanta et al. \cite{AchantaShajiSmithLucchiFuaSuesstrunk:2010} \\
+            \textbf{CIS} & Veksler et al. \cite{VekslerBoykovMehrani:2010} \\
+            \textbf{ERS} & Liu et al. \cite{LiuTuzelRamalingamChellappa:2011} \\
+            \textbf{PB} & Zhang et al. \cite{ZhangHartleyMashfordBurn:2011} \\
+            \textbf{CRS} & Mester et al. \cite{MesterConradGuevara:2011} \\
+            \textbf{SEEDS} & Van den Bergh et al. \cite{VanDenBerghBoixRoigCapitaniVanGool:2012} \\
+            \textbf{reSEEDS} & \textbf{SEEDS} reimplementation \cite{Stutz:2014}\\
+            \textbf{TPS} & Tang et al. \cite{DaiTangHuazhaFuXiaochunCao:2012} \\\hline\hline
+            \multicolumn{2}{|l|}{\textbf{Superpixel algorithms using depth}}\\\hline\hline
+            \textbf{reSEEDS3D} & \textbf{reSEEDS} using depth \cite{Stutz:2014} \\
+            \textbf{DASP} & Weikersdorfer et al. \cite{WeikersdorferGossowBeetz:2012} \\
+            \textbf{VCCS} & Papon et al. \cite{PaponAbramovSchoelerWoergoetter:2013} \\\hline
+        \end{tabular}
+        
+        \bibliographystyle{splncs03}
+	    \bibliography{references}
+    \end{multicols}
+    
+    %\noindent\begin{tabularx}{\textwidth}{|l X|}
+    %    \hline
+    %    \multicolumn{2}{|l|}{\textbf{Implementations}}\\\hline\hline
+    %    \textbf{NC} & \url{http://www2.cs.sfu.ca/~mori/research/superpixels/}\\
+    %    \textbf{FH} & \url{http://cs.brown.edu/~pff/segment/}\\
+    %    \textbf{QS} & \url{http://www.vlfeat.org/overview/quickshift.html}\\
+    %    \textbf{TP} & \url{http://www.cs.toronto.edu/~babalex/research.html}\\
+    %    \textbf{SLIC} & \url{http://ivrl.epfl.ch/research/superpixels}\\
+    %    \textbf{CIS} & \url{http://www.csd.uwo.ca/~olga/Projects/superpixels.html}\\
+    %    \textbf{ERS} & \url{http://mingyuliu.net/}\\
+    %    \textbf{PB} & \url{http://yuhang.rsise.anu.edu.au/yuhang/misc.html}\\
+    %    \textbf{CRS} & \url{http://www.vsi.cs.uni-frankfurt.de/research/superpixel-segmentation/}\\
+    %    \textbf{SEEDS} & \url{http://www.mvdblive.org/seeds/}\\
+    %    \textbf{reSEEDS} & \url{http://davidstutz.de/projects/superpixelsseeds/}\\
+    %    \textbf{TPS} & \url{https://sites.google.com/site/huazhufu/}\\
+    %    \textbf{DASP} & \url{https://github.com/Danvil/dasp}\\
+    %    \textbf{VCCS} & \url{http://pointclouds.org/documentation/tutorials/supervoxel_clustering.php}\\
+    %    \hline
+    %\end{tabularx}
+
+\end{document}

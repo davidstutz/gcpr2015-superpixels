@@ -1,0 +1,364 @@
+% last updated in April 2002 by Antje Endemann
+% Based on CVPR 07 and LNCS, with modifications by DAF, AZ and elle, 2008 and AA, 2010
+% Modified for DAGM 2010 by SR
+% Modified for DAGM 2011 by HF&CB, updated lncs.cls and splncs03.bst
+% Modified for DAGM-OAGM 2012 by TP, updated lncs.cls and splncs03.bst
+% Modified for GCPR 2013 by MH
+% Modified for GCPR 2014 by XJ
+% Modified for GCPR 2015 by JG, updated lncs.cls and splncs03.bst
+
+\documentclass[runningheads]{llncs}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb} % define this before the line numbering.
+\usepackage{color}
+\usepackage{listings}
+\renewcommand{\ttdefault}{pcr}
+\lstloadlanguages{Pascal}
+\lstset{
+	language=Pascal,
+	captionpos=t,
+	tabsize=2,
+	breakatwhitespace=true,
+	showspaces=false,
+	showstringspaces=false,
+}
+
+
+% Definition of \DAGMreviewversion which
+% defines the use of line numbers etc.
+\newcommand\DAGMreviewversion{
+	\usepackage{lineno}
+	\usepackage{color}
+	\renewcommand\thelinenumber{\color[rgb]{0.2,0.5,0.8}\normalfont\sffamily\scriptsize\arabic{linenumber}\color[rgb]{0,0,0}}
+	\renewcommand\makeLineNumber {\hss\thelinenumber\ \hspace{6mm} \rlap{\hskip\textwidth\ \hspace{6.5mm}\thelinenumber}} 
+	\linenumbers
+}
+
+% Please activate this command (\DAGMreviewversion) for a draft
+% version of your manuscript which will be used during the review
+% process.
+% DO NOT USE this command for the camera ready version of your paper.
+\DAGMreviewversion
+
+\begin{document}
+	\pagestyle{headings}
+	\mainmatter
+
+	% Insert your submission number here
+	\def\GCPR15SubNumber{***}
+
+	% Replace with your title
+	\title{Author Guidelines for GCPR 2015 Submission}
+
+	% DO NOT MODIFY these for the draft version that is used for the
+	% review process.
+	\titlerunning{GCPR 2015 Submission \#\GCPR15SubNumber{}. CONFIDENTIAL REVIEW COPY.}
+	\authorrunning{GCPR 2015 Submission \#\GCPR15SubNumber{}. CONFIDENTIAL REVIEW COPY.}
+	\author{Anonymous GCPR 2015 submission}
+	\institute{Paper ID \GCPR15SubNumber}
+
+	\maketitle
+
+	\begin{abstract}
+		The abstract should summarize the contents of the paper using at least 70 and at most 150 words.
+		It will be set in 9-point font size and be inset 1.0 cm from the right and left margins.
+		There will be two blank lines before and after the Abstract.
+	\end{abstract}
+
+	\section{Introduction}
+	\label{sec:introduction}
+	Please follow the steps outlined below when submitting your manuscript\footnote{These instructions have been adapted from GCPR 2014 and the LNCS Authors Guidelines \url{http://www.springer.com/computer/lncs?SGWID=0-164-6-793341-0}}.
+
+	\subsection{Language}
+	All manuscripts must be in English.
+
+	\subsection{Paper length}
+	\textcolor{red}{The maximum allowed paper length is 10 pages without references and 12 pages with references.}
+	For example, a paper with 11 pages text and 1 page references exceeds the paper length while a paper with 9 pages text and 3 pages references is within the limits.
+	Overlength papers exceeding 10 pages text (without references) or 12 pages with references will simply not be reviewed.
+	This includes papers where the margins and formatting are deemed to have been significantly altered from those laid down by this style guide.
+
+	\subsection{Submission and Paper ID}
+	The paper needs to be submitted via Microsoft CMT before the deadline.
+	After the registration of a paper in the CMT, you will receive a paper ID.
+	The paper ID needs to added to the paper by editing
+	\begin{verbatim}
+\def\GCPR15SubNumber{PAPERID}.
+	\end{verbatim}
+	It is also strongly recommended to use the paper ID for the supplemental material (file names, titles, \ldots).
+
+	\subsection{Dual submission}
+	\label{sec:dual}
+	By submitting a manuscript to GCPR, the author(s) assert(s) that it has not been previously published in substantially similar form.
+	Furthermore, no paper which contains significant overlap with the contributions of this paper either has been or will be submitted during the GCPR 2015 review period to either a journal or a conference.
+
+	If there are any papers that may appear to the reviewers to violate this condition, then it is your responsibility to (1) cite these papers -- preserving anonymity as described in Section~\ref{sec:blind} of this example paper, (2) argue in the body of your paper why your GCPR paper is nontrivially different from these concurrent submissions, and (3) include anonymized versions of those papers in the supplemental material.
+
+	\subsection{Supplemental Material}
+	Authors may optionally upload supplemental material.
+	Typically, this material might include result videos that cannot be included in the main paper, anonymized related submissions to other conferences and journals, and appendices or technical reports containing extended proofs and mathematical derivations that are not essential for understanding of the paper.
+	Note that the contents of the supplemental material should be referred to appropriately in the paper, and that reviewers are not obliged to look at the submitted material.
+	All supplemental material must be either a single PDF or a zip file containing multiple items.
+	To limit the load on the servers, we ask authors to either submit the supplemental material well before the main paper deadline, or after the main paper deadline.
+
+	\subsection{Line numbering}
+	All lines should be numbered, as in this example document.
+	This makes reviewing more efficient, because reviewers can refer to a line on a page.
+
+	\subsection{Mathematics}
+	Please number all of your sections and displayed equations.
+	Again, this makes reviewing more efficient.
+	Also, it is important for readers to be able to refer to any particular equation.
+	Just because you didn't refer to it in the text doesn't mean some future reader might not need to refer to it.
+	It is cumbersome to have to use circumlocutions like ``the equation second from the top of page 3 column 1''.
+	(Note that the line numbering will not be present in the final copy, so is not an alternative to equation numbers).
+
+	\section{Blind review}
+	\label{sec:blind}
+	Many authors misunderstand the concept of anonymizing for blind review.
+	Blind review does not mean that one must remove citations to one's own work -- in fact it is often impossible to review a paper unless the previous citations are known and available.
+	Blind review means that you do not use the words ``my'' or ``our'' when citing previous work.
+	That is all.
+	(But see below for technical reports).
+
+	Saying ``this builds on the work of Lucy Smith [1]'' does not say that you are Lucy Smith, it says that you are building on her work.
+	If you are Smith and Jones, do not say ``as we show in [7]'', say ``as Smith and Jones show in [7]'' and at the end of the paper, include reference 7 as you would any other cited work.
+
+	\begin{itemize}
+		\item An example of a paper that violates the guidelines:
+		\begin{quote}
+			\emph{
+				In this paper we present a performance analysis of our previous paper [1], and show it to be inferior to all previously known methods.
+				Why the previous paper was accepted without this analysis is beyond me.
+			}
+			\emph{[1] Removed for blind review}
+		\end{quote}
+		\item An example of a paper well prepared for blind review:
+			\begin{quote}
+				\emph{
+					In this paper we present a performance analysis of the paper of Smith [1], and show it to be inferior to all previously known methods.
+					Why the previous paper was accepted without this analysis is beyond me.
+				}
+				\emph{[1] Smith, L and Jones, C. ``The frobnicatable foo filter, a fundamental contribution to human knowledge''. Nature 381(12), 1-213.}
+			\end{quote}
+	\end{itemize}
+
+	If you are making a submission to another conference at the same time, which covers similar or overlapping material, you may need to refer to that submission in order to explain the differences, just as you would if you had previously published related work.
+	In such cases, include the anonymized parallel submission~\cite{Authors10} as additional material and cite it as
+	\begin{quote}
+		\emph{1. Authors. ``The frobnicatable foo filter'', FOOBAR Conference 2015 Submission ID 324, Supplied as additional material {\tt FOOBAR15.pdf}.}
+	\end{quote}
+
+	Finally, you may feel you need to tell the reader that more details can be found elsewhere, and refer them to a technical report.
+	For conference submissions, the paper must stand on its own, and not {\em require} the reviewer to go to a technical report for further details.
+	Thus, you may say in the body of the paper ``further details may be found in~\cite{Authors10b}''.
+	Then submit the technical report as additional material.
+	Again, you may not assume the reviewers will read this material.
+
+	Sometimes your paper is about a problem which you tested using a tool which is widely known to be restricted to a single institution.
+	For example, let's say it's 1969, you have solved a key problem on the Apollo lander, and you believe that the GCPR audience would like to hear about your solution.
+	The work is a development of your celebrated 1968 paper entitled ``Zero-g frobnication: How being the only people in the world with access to the Apollo lander source code makes us a wow at parties'', by Zeus.
+	You can handle this paper like any other.
+	Don't write ``We show how to improve our previous work [Anonymous, 1968].
+	This time we tested the algorithm on a lunar lander [name of lander removed for blind review]''.
+	That would be silly, and would immediately identify the authors.
+	Instead write the following:
+	\begin{quotation}
+		\emph{
+			We describe a system for Zero-g frobnication.
+			This system is new because it handles the following cases: A, B.
+			Previous systems [Zeus et al. 1968] didn't handle case B properly.
+			Ours handles it by including a foo term in the bar integral.
+			\ldots
+			The proposed system was integrated with the Apollo lunar lander, and went all the way to the moon, don't you know.
+			It displayed the following behaviours which show how well we solved cases A and B: \ldots
+		}
+	\end{quotation}
+	As you can see, the above text follows standard scientific convention, reads better than the first version, and does not explicitly name you as the authors.
+	A reviewer might think it is likely that the new paper was written by Zeus, but cannot make any decision based on that guess.
+	He or she would have to be sure that no other authors could have been contracted to solve problem B.
+
+	Since acknowledgements are not relevant for reviewing and violate blind review, please {\bf omit acknowledgements}.
+	The acknowledgements can be added to the final copy.
+
+	\section{Manuscript Preparation}
+	This is an edited version of Springer LNCS instructions\footnote{\url{http://www.springer.com/computer/lncs?SGWID=0-164-6-793341-0}} adapted for GCPR 2015 first paper submission.
+	You have to use \LaTeX2$_\varepsilon$ for the preparation of your camera-ready manuscript together with the corresponding Springer class file \verb+llncs.cls+.
+	We would like to stress that the class/style files and the template should not be manipulated and that the guidelines regarding font sizes and format should be adhered to.
+	This is to ensure that the end product is as homogeneous as possible.
+
+	\subsection{Printing Area}
+	The printing area is $122  \; \mbox{mm} \times 193 \;\mbox{mm}$.
+	The text should be justified to occupy the full line width, so that the right margin is not ragged, with words hyphenated as appropriate.
+	Please fill pages so that the length of the text is no less than 180~mm.
+
+	\subsection{Layout, Typeface, Font Sizes, and Numbering}
+	Use 10-point type for the name(s) of the author(s) and 9-point type for the address(es) and the abstract.
+	For the main text, please use 10-point type and single-line spacing.
+	We recommend using Computer Modern Roman (CM) fonts, Times, or one of the similar typefaces widely used in photo-typesetting.
+	(In these typefaces the letters have serifs, i.e., short endstrokes at the head and the foot of letters.)
+	Italic type may be used to emphasize words in running text.
+	Bold type and underlining should be avoided.
+	With these sizes, the interline distance should be set so that some 45 lines occur on a full-text page.
+
+	\subsubsection{Headings.}
+	Headings should be capitalized (i.e., nouns, verbs, and all other words except articles, prepositions, and conjunctions should be set with an initial capital) and should, with the exception of the title, be aligned to the left.
+	Only the first two levels of section headings should be numbered, as shown in Table~\ref{table:headings}.
+	The respective font sizes are also given in Table~\ref{table:headings}.
+	Kindly refrain from using ``0'' when numbering your section headings.
+	Words joined by a hyphen are subject to a special rule.
+	If the first word can stand alone, the second word should be capitalized.
+
+	\setlength{\tabcolsep}{4pt}
+	\begin{table}
+		\centering
+		\caption{Font sizes of headings. Table captions should always be positioned {\it above} the tables.}
+		\label{table:headings}
+		\begin{tabular}{lll}
+			\hline\noalign{\smallskip}
+			Heading level & Example & Font size and style\\
+			\noalign{\smallskip}
+			\hline
+			\noalign{\smallskip}
+			Title (centered)  & {\Large \bf Lecture Notes \dots}   & 14 point, bold\\
+			1st-level heading & {\large \bf 1 Introduction}        & 12 point, bold\\
+			2nd-level heading & {\bf 2.1 Printing Area}            & 10 point, bold\\
+			3rd-level heading & {\bf Headings.} Text follows \dots & 10 point, bold\\
+			4th-level heading & {\it Remark.} Text follows \dots   & 10 point, italic\\
+			\hline
+		\end{tabular}
+	\end{table}
+	\setlength{\tabcolsep}{1.4pt}
+
+	Here are some examples of headings:
+	``Criteria to Disprove Context-Freeness of Collage Languages'',
+	``On Correcting the Intrusion of Tracing Non-deterministic Programs by Software'',
+	``A User-Friendly and Extendable Data Distribution System'',
+	``Multi-flip Networks: Parallelizing GenSAT'',
+	``Self-determinations of Man''.
+
+	\subsubsection{Lemmas, Propositions, and Theorems.}
+	The numbers accorded to lemmas, propositions, and theorems etc. should appear in consecutive order, starting with Lemma 1.
+	Please do not include section counters in the numbering like ``Theorem 1.1''.
+
+	\subsection{Figures and Photographs}
+	\label{sec:figures}
+	Please produce your figures electronically and integrate them into your text file.
+	Integrate images by using the package \verb+graphicx+ or the style files \verb+psfig+ or \verb+epsf+ and define figures as floating objects.
+	Please avoid using the location parameter ``h'' for ``here''.
+
+	It is essential that all illustrations are clear and legible.
+	Vector graphics (rather than rasterized images) should be used for diagrams and schemas whenever possible.
+	Please check that the lines in line drawings are not interrupted and have a constant width.
+	Grids and details within the figures must be clearly legible and may not be written one on top of the other.
+	Line drawings are to have a resolution of at least 800 dpi (preferably 1200 dpi).
+	The lettering in figures should not use font sizes smaller than 6 pt (\~ 2 mm character height).
+	Figures are to be numbered and to have a caption which should always be positioned under the figures, in contrast to the caption belonging to a table, which should always appear above the table.
+	Captions are set in 9-point type.
+	If they are short, they are centered between the margins.
+	Longer captions, covering more than one line, are justified (Fig.~\ref{fig:example1} and Fig.~\ref{fig:example2} show examples).
+	Captions that do not constitute a full sentence, do not have a period.
+	Text fragments of fewer than four lines should not appear at the tops or bottoms of pages, following a table or figure.
+	In such cases, it is better to set the figures right at the top or right at the bottom of the page.
+
+	\begin{figure}[t]
+	\centering
+		\includegraphics[height=7.2cm]{eijkel2}
+		\caption{
+			One kernel at $x_s$ ({\it dotted kernel}) or two kernels at $x_i$ and $x_j$ ({\it left and right}) lead to the same summed estimate at $x_s$.
+			This shows a figure consisting of different types of lines.
+			Elements of the figure described in the caption should be set in italics, in parentheses, as shown in this sample caption.
+		}
+		\label{fig:example1}
+	\end{figure}
+
+	\begin{figure}[t]
+		\centering
+		\includegraphics[height=7.2cm]{eijkel2}
+		\caption{One kernel at $x_s$ ({\it dotted kernel}) or two kernels at $x_i$ and $x_j$ ({\it left and right})}
+		\label{fig:example2}
+	\end{figure}
+
+	\subsection{Formulas}
+	Displayed equations or formulas are centered and set on a separate line (with an extra line or half line space above and below).
+	Displayed expressions should be numbered for reference.
+	The numbers should be consecutive within the contribution, with numbers enclosed in parentheses and set on the right margin.
+	Please do not include section counters in the numbering.
+	\begin{equation}
+		\psi (u) = \int_{o}^{T} \left[
+			\frac{1}{2} \left(\Lambda_{o}^{-1} u,u\right) + N^{\ast} (-u)
+		\right] dt \;  .
+	\end{equation}
+	Equations should be punctuated in the same way as ordinary text but with a small space before the end punctuation mark.
+
+	\subsection{Program Code}
+	Program listings or program commands in the text are normally set in typewriter font, e.g., CMTT10 or Courier.
+	\medskip
+	\noindent
+	{\it Example of a Computer Program}
+	\begin{lstlisting}[caption={Example from Jensen K., Wirth N. (1991) Pascal user manual and report. Springer, New York}]
+program Inflation (Output)
+	{Assuming annual inflation rates of 7%, 8%, and 10%,...
+	years};
+	const
+		MaxYears = 10;
+	var
+		Year: 0..MaxYears;
+		Factor1, Factor2, Factor3: Real;
+	begin
+		Year := 0;
+		Factor1 := 1.0; Factor2 := 1.0; Factor3 := 1.0;
+		WriteLn('Year  7% 8% 10%'); WriteLn;
+		repeat
+			Year := Year + 1;
+			Factor1 := Factor1 * 1.07;
+			Factor2 := Factor2 * 1.08;
+			Factor3 := Factor3 * 1.10;
+			WriteLn(Year:5, Factor1:7:3, Factor2:7:3, Factor3:7:3)
+		until Year = MaxYears
+	end.
+	\end{lstlisting}
+	\noindent
+
+	\subsection{Footnotes}
+	The superscript numeral used to refer to a footnote appears in the text either directly after the word to be discussed or -- in relation to a phrase or a sentence -- following the punctuation sign (comma, semicolon, or period).
+	\footnote{The footnote numeral is set flush left and the text follows with the usual word spacing.}
+
+	\subsection{Citations}
+	For citations in the text, please use square brackets and consecutive numbers.
+	We would write \cite{Alpher02,Alpher03,Alpher04,Authors10,Authors10b} for consecutive numbers and \cite{Alpher02,Alpher04,Authors10b} for non-consecutive numbers.
+	The numbers in the bibliography section are without square brackets.
+	Springer standardizes the format of the references and references that do not adhere to the LNCS style will be reformatted.
+	We would like to draw your attention to the fact that references to LNCS proceedings papers are particularly often reformatted due to missing editor names or incomplete publisher information.
+	This adjustment may result in the final papers as published by Springer having more pages than the original versions as submitted by the authors.
+	Here is an example:
+	\begin{itemize}
+		\item Reference as formatted in author's original version:
+		\begin{quote}
+			\emph{Assemlal, H.E., Tschumperl\'{e}, D., Brun, L.: Efficient Computation of PDF-Based Characteristics from Diffusion MR Signal. In: MICCAI. Volume 5242. (2008) 70–78}
+		\end{quote}
+		\item Reference after reformatting by Springer:
+		\begin{quote}
+			\emph{Assemlal, H.E., Tschumperl\'{e}, D., Brun, L.: Efficient Computation of PDF-Based Characteristics from Diffusion MR Signal. In: Metaxas, D., Axel, L., Fichtinger, G., Sz\'{e}kely, G. (eds.) MICCAI 2008, Part II. LNCS, vol. 5242, pp. 70–78. Springer, Heidelberg (2008)}
+		\end{quote}
+	\end{itemize}
+	One more line is needed for this reference, as a result of Springer’s adjustment.
+	Please make sure that all your sources are correctly listed in the reference section.
+	Do not include references to pieces of work that are not connected with your paper.
+	In the references are examples for a journal article \cite{jour}, an LNCS chapter \cite{lncschap}, a book \cite{book}, a paper in a proceeding without editors \cite{proceeding1}, a technical report \cite{proceeding2}, as well as a URL \cite{url}.
+	Please note that proceedings published in LNCS are not cited with their full titles, but with their acronyms.
+
+	\subsection{Plagiarism}
+	Plagiarism is a serious violation of the submission guidelines.
+	Even in the very unlikely case that plagiarism is not discovered during the reviewing process, the paper will be retracted at any time in case of plagiarism.
+	If an author has copied from another author or has used parts of another author's work (text, tables, figures, etc.), without his or her permission and a reference, then the paper on SpringerLink will be given a ``retracted'' stamp, and an erratum explaining the reasons for the retraction will be included.
+	In addition, the volume editors and the author's academic supervisors will be informed that plagiarism has been committed.
+	Please note that a retracted paper remains visible, with its ``retracted'' stamp.
+	It does not simply disappear.
+
+	\bibliographystyle{splncs03}
+	\bibliography{egbib}
+
+\end{document}
+

@@ -1,4 +1,4 @@
-# Superpixel Segmentation using Depth Information
+# Superpixel Segmentation: An Evaluation
 
 This repository contains both the paper and the poster corresponding to 
 

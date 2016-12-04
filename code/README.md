@@ -1,4 +1,4 @@
-# Superpixel Segmentation using Depth Information / Code
+# Superpixel Segmentation: An Evaluation / Code
 
 The code provided as part of the bachelor thesis "Superpixel Segmentation using Depth Information" [1]:
 

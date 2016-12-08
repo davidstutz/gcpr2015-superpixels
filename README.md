@@ -1,5 +1,7 @@
 # Superpixel Segmentation: An Evaluation
 
+**A more comprehensive comparison of superpixel algorithms can now be found at [davidstutz.de/projects/superpixel-benchmark](http://davidstutz.de/projects/superpixel-benchmark).**
+
 This repository contains both the paper and the poster corresponding to 
 
 	[2] D. Stutz.
